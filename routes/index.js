@@ -24,7 +24,6 @@ router.get("/", async (req, res) => {
 
     const apiRes = await needle(
       "get",
-      // "https://public-api.tracker.gg/v2/apex/standard/profile/xbl/taffi77",
       `${API_BASE_URL}${plat}/${user}`,
       { headers: { "TRN-Api-Key": REACT_APP_API_KEY } }
     );

@@ -6,8 +6,14 @@ const PORT = process.env.PORT || 8080
 
 const app = express()
 
-// Set static folder
-// app.use(express.static("public"));
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 //Routes
 app.use('/api', require('./routes'))
