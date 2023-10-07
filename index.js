@@ -1,3 +1,4 @@
+const tracer = require('dd-trace').init();
 const express = require('express')
 const cors = require('cors')
 require('dotenv').config()
